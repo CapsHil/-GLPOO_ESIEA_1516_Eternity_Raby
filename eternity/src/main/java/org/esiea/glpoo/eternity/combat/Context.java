@@ -1,6 +1,9 @@
 package org.esiea.glpoo.eternity.combat;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Hashtable;
+import java.util.Scanner;
 
 public class Context {
 
@@ -8,36 +11,106 @@ public class Context {
 	private static Hashtable<Integer, Capacite> capacites;
 	private static Hashtable<Integer, TirageEuromillion> tirages;
 	
-	public static void extractCapacityData(String chemin) {
+	public static void extractCapacityData(String chemin) throws FileNotFoundException {
+		
 		capacites = new Hashtable<Integer, Capacite>();
-		
-		Capacite cap1 = new Capacite("Charge", 10, 0);
-		Capacite cap2 = new Capacite("Coup de foudre", 15, 0);
-		Capacite cap3 = new Capacite("Soin", 0, 10);
-		Capacite cap4 = new Capacite("Bombe atomique", 999, 0);
-		
-		capacites.put(0, cap1);
-		capacites.put(1, cap2);
-		capacites.put(2, cap3);
-		capacites.put(3, cap4);
+
+        Scanner scanner = new Scanner(new File(chemin));
+        Scanner dataScanner = null;
+        int index = 0;
+        int id = 0, degat = 0, soin = 0;
+        String nom = null;
+         
+        while (scanner.hasNextLine()) {
+            dataScanner = new Scanner(scanner.nextLine());
+            dataScanner.useDelimiter(",");
+ 
+            while (dataScanner.hasNext()) {
+                String data = dataScanner.next();
+                if (index == 0)
+                    id = Integer.parseInt(data);
+                else if (index == 1)
+                	nom = data;
+                else if (index == 2)
+                	degat = Integer.parseInt(data);
+                else if (index == 3)
+                	soin = Integer.parseInt(data);
+                else
+                    System.out.println("invalid data::" + data);
+                index++;
+            }
+            Capacite cap = new Capacite(nom,degat,soin);
+            index = 0;
+            capacites.put(id,cap);
+        }
+        scanner.close();
+        /*for(int i=1;i<=37;i++)
+        	System.out.println(capacites.get(i).getNom());*/
 	}
 	
-	public static void extractPokemonData(String chemin) {
+	public static void extractPokemonData(String chemin) throws FileNotFoundException {
+		
 		pokemons = new Hashtable<Integer, PokemonCsv>();
-		
-		int key = 0;
-		
-		PokemonCsv pkmn = new PokemonCsv("pikachu", 80, "/home/nicobas/Downloads/pickachu_face.png", "/home/nicobas/Downloads/pickachu_dos.png", 0, 1, 2, 3);
-		pokemons.put(key, pkmn);
+
+		Scanner scanner = new Scanner(new File(chemin));
+        Scanner dataScanner = null;
+        int index = 0;
+        int id = 0, pv = 0, cap1 = 0, cap2 = 0, cap3 = 0, cap4 = 0;
+        String nom = null, cheminImageFace = null, cheminImageDos = null;
+         
+        while (scanner.hasNextLine()) {
+            dataScanner = new Scanner(scanner.nextLine());
+            dataScanner.useDelimiter(",");
+ 
+            while (dataScanner.hasNext()) {
+                String data = dataScanner.next();
+                if (index == 0)
+                    id = Integer.parseInt(data);
+                else if (index == 1)
+                	nom = data;
+                else if (index == 2)
+                	pv = Integer.parseInt(data);
+                else if (index == 3)
+                	cheminImageFace = data;
+                else if (index == 4)
+                	cheminImageDos = data;
+                else if (index == 5)
+                	cap1 = Integer.parseInt(data);
+                else if (index == 6)
+                	cap2 = Integer.parseInt(data);
+                else if (index == 7)
+                	cap3 = Integer.parseInt(data);
+                else if (index == 8)
+                	cap4 = Integer.parseInt(data);
+                else
+                    System.out.println("invalid data::" + data);
+                index++;
+            }
+            PokemonCsv pokemon = new PokemonCsv(nom, pv, cheminImageFace, cheminImageDos, cap1, cap2, cap3, cap4);
+            index = 0;
+            pokemons.put(id,pokemon);
+        }
+        scanner.close();
+        /*for(int i=1;i<=20;i++)
+        	System.out.println(pokemons.get(i).getCapaciteId(3));*/
 	}
+	
 	
 	public static void extractTirageData (String chemin) {
 		
 	}
 	
 	public static void extractData () {
-		extractCapacityData("capacite_data.csv");
-		extractPokemonData("pokemon_data.csv");
+		try {
+			extractCapacityData("./src/data/csv/competences.csv");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			extractPokemonData("./src/data/csv/pokemon.csv");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		extractTirageData("tirage_data.csv");
 	}
 	
@@ -49,4 +122,5 @@ public class Context {
 	public static Capacite getCapacite(int id) {
 		return capacites.get(id);
 	}
+	
 }
