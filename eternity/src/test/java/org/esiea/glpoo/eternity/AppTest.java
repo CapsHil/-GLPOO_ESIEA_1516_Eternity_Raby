@@ -25,7 +25,13 @@ public class AppTest
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+    	TestSuite suite = new TestSuite("Tous les tests");
+    	suite.addTestSuite(CapaciteTest.class);
+    	suite.addTestSuite(PokemonCsvTest.class);
+    	suite.addTestSuite(JoueurTest.class);
+    	suite.addTestSuite(ContextTest.class);
+    	suite.addTestSuite(PokemonTest.class);
+    	return suite;
     }
 
     /**
