@@ -15,7 +15,7 @@ public class CombatView extends JFrame {
 	private ActionPanel actionPanel;
 	
 	public CombatView (JoueurPanel joueurPanelHaut, JoueurPanel joueurPanelBas, ActionPanel actionPanel) {
-
+		super("Pokésiea");
 		this.joueurPanelHaut = joueurPanelHaut;
 		this.joueurPanelBas = joueurPanelBas;
 		this.actionPanel = actionPanel;
@@ -30,16 +30,8 @@ public class CombatView extends JFrame {
 		cont.add(this.actionPanel, BorderLayout.SOUTH);
 		this.setContentPane(cont);
 		
-		this.setBounds(200,200,800, 600);
+		this.setBounds(200,200,1200,600);
 		
 		this.setVisible(true);
-	}
-	
-	public int getWidthPanels() {
-		return this.joueurPanelHaut.getWidth() +  this.joueurPanelBas.getWidth() + this.actionPanel.getWidth();
-	}
-	
-	public int getHeightPanels() {
-		return this.joueurPanelHaut.getHeight() +  this.joueurPanelBas.getHeight() + this.actionPanel.getHeight();
 	}
 }

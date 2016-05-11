@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 public class JoueurReel extends Joueur  implements ActionListener, MouseListener {
 	
 	private Capacite tempCapacite;
+	private int argent;
 
 	public JoueurReel(String nom) {
 		super(nom);

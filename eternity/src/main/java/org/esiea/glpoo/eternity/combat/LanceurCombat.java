@@ -6,10 +6,19 @@ public class LanceurCombat {
     {	
 		Context.extractData();
 		
-		JoueurPNJ j1 = new JoueurPNJ("Toto");
-		JoueurPNJ j2 = new JoueurPNJ("Bastien");
+		ParametresCombatView param = new ParametresCombatView();
 		
-        Combat combat = new Combat(j1, j2, 4, 4);
+		while(!(param.isPret())) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+        Combat combat = new Combat(param.getJoueurHaut(), param.getJoueurBas(), param.getNbPkmnH(), param.getNbPkmnB());
+        
+        param.dispose();
         
         combat.lancer();
     }
