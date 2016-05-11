@@ -122,5 +122,4 @@ public class Context {
 	public static Capacite getCapacite(int id) {
 		return capacites.get(id);
 	}
-	
 }
