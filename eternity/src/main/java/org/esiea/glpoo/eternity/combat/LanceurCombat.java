@@ -6,10 +6,10 @@ public class LanceurCombat {
     {	
 		Context.extractData();
 		
-		JoueurReel j1 = new JoueurReel("Toto");
-		JoueurReel j2 = new JoueurReel("Bastien");
+		JoueurPNJ j1 = new JoueurPNJ("Toto");
+		JoueurPNJ j2 = new JoueurPNJ("Bastien");
 		
-        Combat combat = new Combat(j1, j2, 2, 2);
+        Combat combat = new Combat(j1, j2, 4, 4);
         
         combat.lancer();
     }

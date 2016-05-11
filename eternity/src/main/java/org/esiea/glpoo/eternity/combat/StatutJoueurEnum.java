@@ -5,5 +5,8 @@ public enum StatutJoueurEnum {
 	AttendCapacite,
 	AttendPokemon,
 	Termine,
-	AttendTour
+	AttendTour,
+	Perdant,
+	Vainqueur,
+	AttendUtilisateur
 }

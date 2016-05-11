@@ -58,8 +58,12 @@ public class ActionPanel extends JPanel {
 		this.boutonPanel.setListener(l);
 	}
 	
-	public void setConsoleListener(MouseListener l) {
+	public void addConsoleListener(MouseListener l) {
 		this.zoneText.addMouseListener(l);
+	}
+	
+	public void removeConsoleListener(MouseListener l) {
+		this.zoneText.removeMouseListener(l);
 	}
 
 }

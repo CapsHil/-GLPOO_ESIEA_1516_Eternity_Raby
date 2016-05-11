@@ -16,7 +16,8 @@ public class JoueurReel extends Joueur  implements ActionListener, MouseListener
 	public void jouerPokemon() {
 		super.jouerPokemon();
 		
-		if (this.statut != StatutJoueurEnum.Termine) {
+		if (this.statut != StatutJoueurEnum.Termine && this.statut != StatutJoueurEnum.Perdant && this.statut != StatutJoueurEnum.Vainqueur) {
+			this.actionPanel.boutonPanel.setVisible(true);
 			this.actionPanel.boutonPanel.setNomsCapacites(this.pokemons[this.pkmnActif]);
 			this.statut = StatutJoueurEnum.AttendCapacite;
 			this.actionPanel.printlnText("Selectionnez une capacité");
@@ -24,8 +25,16 @@ public class JoueurReel extends Joueur  implements ActionListener, MouseListener
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		if (this.isClicking)
+			return;
+		
+		this.isClicking = true;
+		
 		if (e.getSource() instanceof CapaciteBouton && this.statut == StatutJoueurEnum.AttendCapacite) {
 			Capacite cap = ((CapaciteBouton)e.getSource()).getCapacite();
+			
+			if (cap == null)
+				return;
 			
 			this.tempCapacite = cap;
 			
@@ -34,9 +43,27 @@ public class JoueurReel extends Joueur  implements ActionListener, MouseListener
 			this.actionPanel.printlnText("Selectionnez un pokémon pour utiliser : " + cap.getNom());
 		}
 		
+		this.isClicking = false;
 	}
 
 	public void mouseClicked(MouseEvent e) {
+				
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		
+	}
+
+	public void mouseExited(MouseEvent e) {
+		
+	}
+
+	public void mousePressed(MouseEvent e) {
+		if (this.isClicking)
+			return;
+		
+		this.isClicking = true;
+		
 		if (e.getSource() instanceof ImagePokemonPanel && this.statut == StatutJoueurEnum.AttendPokemon) {
 			if (this.tempCapacite == null)
 				return;
@@ -49,27 +76,10 @@ public class JoueurReel extends Joueur  implements ActionListener, MouseListener
 			
 			this.jouerPokemon();
 		}
-		
-	}
-
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		this.isClicking = false;		
 	}
 	
 	public void initListener() {
