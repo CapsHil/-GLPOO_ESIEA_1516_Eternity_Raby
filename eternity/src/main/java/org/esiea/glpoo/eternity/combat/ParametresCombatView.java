@@ -165,9 +165,9 @@ public class ParametresCombatView extends JFrame implements ActionListener {
 				this.joueurHaut = new JoueurPNJ(this.nomJH.getText());
 			
 			if (this.reelJB.isSelected())
-				this.joueurBas = new JoueurReel(this.nomJH.getText());
+				this.joueurBas = new JoueurReel(this.nomJB.getText());
 			else
-				this.joueurBas = new JoueurPNJ(this.nomJH.getText());
+				this.joueurBas = new JoueurPNJ(this.nomJB.getText());
 			
 			this.pret = true;
 		}
