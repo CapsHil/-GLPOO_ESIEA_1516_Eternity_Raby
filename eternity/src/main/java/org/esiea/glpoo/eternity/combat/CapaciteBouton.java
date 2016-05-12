@@ -5,6 +5,10 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 public class CapaciteBouton extends JButton {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4873024777233659430L;
 	public Capacite capacite;
 
 	public Capacite getCapacite() {

@@ -1,6 +1,5 @@
 package org.esiea.glpoo.eternity.combat;
 
-import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.util.EventListener;
 
@@ -10,6 +9,10 @@ import javax.swing.JPanel;
 
 public class ImagePokemonPanel extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Pokemon pokemon;
 	private boolean estEnBas;
 	private JLabel image;

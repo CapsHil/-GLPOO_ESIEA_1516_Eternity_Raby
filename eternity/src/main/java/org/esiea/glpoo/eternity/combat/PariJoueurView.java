@@ -17,6 +17,11 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class PariJoueurView extends JFrame implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8803521798359307611L;
+
 	private JoueurReel utilisateur;
 	
 	private Joueur joueurHaut, joueurBas;

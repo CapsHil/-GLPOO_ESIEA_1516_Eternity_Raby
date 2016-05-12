@@ -19,6 +19,7 @@ public abstract class Joueur {
 	public Joueur(String nom) {
 		this.nom = nom;
 		this.isClicking = false;
+		//this.pokemons
 	}
 	
 	public void initCombat(Joueur adversaire, boolean estEnBas, ActionPanel actionPanel, int nbPkmn) {

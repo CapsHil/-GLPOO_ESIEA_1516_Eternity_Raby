@@ -1,11 +1,5 @@
 package org.esiea.glpoo.eternity.combat;
 
-import java.awt.Color;
-import java.awt.ComponentOrientation;
-
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 public class Pokemon {

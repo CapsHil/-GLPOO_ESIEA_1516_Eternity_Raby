@@ -9,12 +9,13 @@ public class Context {
 
 	private static Hashtable<Integer, PokemonCsv> pokemons; // <id, objet>
 	private static Hashtable<Integer, Capacite> capacites;
-	private static Hashtable<Integer, TirageEuromillion> tirages;
-	
+	private static String path = "src/main/ressources/data/csv/";
 	public static void extractCapacityData(String chemin) throws FileNotFoundException {
 		
 		capacites = new Hashtable<Integer, Capacite>();
 
+//		File test = new File(".");
+//		System.out.println(test.getAbsolutePath());
         Scanner scanner = new Scanner(new File(chemin));
         Scanner dataScanner = null;
         int index = 0;
@@ -51,8 +52,8 @@ public class Context {
 	public static void extractPokemonData(String chemin) throws FileNotFoundException {
 		
 		pokemons = new Hashtable<Integer, PokemonCsv>();
-
-		Scanner scanner = new Scanner(new File(chemin));
+		File file = new File(chemin);
+		Scanner scanner = new Scanner(file);
         Scanner dataScanner = null;
         int index = 0;
         int id = 0, pv = 0, cap1 = 0, cap2 = 0, cap3 = 0, cap4 = 0;
@@ -102,12 +103,12 @@ public class Context {
 	
 	public static void extractData () {
 		try {
-			extractCapacityData("./src/data/csv/competences.csv");
+			extractCapacityData(path+"competences.csv");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		try {
-			extractPokemonData("./src/data/csv/pokemon.csv");
+			extractPokemonData(path+"pokemon.csv");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

@@ -17,6 +17,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class ParametresCombatView extends JFrame implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7619139499343220035L;
 	private Joueur joueurHaut, joueurBas;
 	private int nbPkmnH, nbPkmnB;
 	

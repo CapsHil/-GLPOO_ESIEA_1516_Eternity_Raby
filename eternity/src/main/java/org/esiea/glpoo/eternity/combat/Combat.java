@@ -1,14 +1,7 @@
 package org.esiea.glpoo.eternity.combat;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class Combat implements MouseListener {
 	private Joueur joueurHaut, joueurBas, joueurActif;

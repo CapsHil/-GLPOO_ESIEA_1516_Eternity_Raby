@@ -1,17 +1,11 @@
 package org.esiea.glpoo.eternity.combat;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
 import java.util.EventListener;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
 public class BoutonPanel extends JPanel {
 
