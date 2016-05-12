@@ -10,6 +10,7 @@ public class Context {
 	private static Hashtable<Integer, PokemonCsv> pokemons; // <id, objet>
 	private static Hashtable<Integer, Capacite> capacites;
 	private static String path = "src/main/ressources/data/csv/";
+	static Hashtable<Integer, TirageEuromillion> tirages;
 	public static void extractCapacityData(String chemin) throws FileNotFoundException {
 		
 		capacites = new Hashtable<Integer, Capacite>();
@@ -97,8 +98,46 @@ public class Context {
 	}
 	
 	
-	public static void extractTirageData (String chemin) {
-		
+	public static void extractTirageData (String chemin) throws FileNotFoundException {
+		tirages = new Hashtable<Integer, TirageEuromillion>();
+
+		Scanner scanner = new Scanner(new File(chemin));
+        Scanner dataScanner = null;
+        int index = 0;
+        int id = 1, boule1 = 0, boule2 = 0, boule3 = 0, boule4 = 0, boule5 = 0, etoile1 = 0, etoile2 = 0;
+         
+        while (scanner.hasNextLine()) {
+            dataScanner = new Scanner(scanner.nextLine());
+            dataScanner.useDelimiter(";");
+            while (dataScanner.hasNext()) {
+                String data = dataScanner.next();
+                if (index == 4)
+                	boule1 = Integer.parseInt(data);
+                else if (index == 5)
+                	boule2 = Integer.parseInt(data);
+                else if (index == 6)
+                	boule3 = Integer.parseInt(data);
+                else if (index == 7)
+                	boule4 = Integer.parseInt(data);
+                else if (index == 8)
+                	boule5 = Integer.parseInt(data);
+                else if (index == 9)
+                	etoile1 = Integer.parseInt(data);
+                else if (index == 10)
+                	etoile2 = Integer.parseInt(data);
+                /*else
+                    System.out.println("invalid data::" + data);*/
+                index++;
+            }
+            TirageEuromillion tirage = new TirageEuromillion(boule1, boule2, boule3, boule4, boule5, etoile1, etoile2);
+            index = 0;
+            tirages.put(id,tirage);
+            id++;
+        }
+        scanner.close();
+        /*for(int i=1;i<=20;i++)
+        	System.out.println(tirages.get(i).getBoule1());*/
+
 	}
 	
 	public static void extractData () {
@@ -112,13 +151,17 @@ public class Context {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		extractTirageData("tirage_data.csv");
+		try {
+			extractTirageData(path+"euromillions.csv");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static Pokemon getPokemonAleatoire() {
 		while (true) {
-			int id = (int) (Math.random() * pokemons.size()); //... en fonction d'un tirage
-			
+			int rand = (int) (Math.random() * tirages.size()); //... en fonction d'un tirage
+			int id = (tirages.get(rand).getBoule1() + tirages.get(rand).getBoule2() + tirages.get(rand).getBoule3() + tirages.get(rand).getBoule4() + tirages.get(rand).getBoule5()) % pokemons.size();
 			if (pokemons.get(id) != null)
 				return new Pokemon(pokemons.get(id));
 		}
