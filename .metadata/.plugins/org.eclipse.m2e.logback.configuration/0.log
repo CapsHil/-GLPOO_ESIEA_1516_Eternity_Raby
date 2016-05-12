@@ -171,3 +171,12 @@
 2016-05-13 00:24:23,735 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
 2016-05-13 00:24:23,737 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-05-13 00:24:23,737 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-13 00:26:40,874 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:26:40,875 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-13 00:26:40,876 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:26:40,876 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-13 00:26:45,101 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:26:45,102 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-13 00:26:45,103 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:26:45,103 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-13 00:26:45,761 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.

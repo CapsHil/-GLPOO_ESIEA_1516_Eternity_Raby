@@ -17,13 +17,13 @@ public class ImagePokemonPanel extends JPanel {
 	private boolean estEnBas;
 	private JLabel image;
 	private ImageIcon icone;
-	private static String path = "src/main/ressources/";
+	//private static String path = "src/main/ressources/";
 	
 	public ImagePokemonPanel(Pokemon pkmn, boolean estEnBas) {
 		this.pokemon = pkmn;
 		this.estEnBas = estEnBas;
 		
-		this.icone = new ImageIcon(path+this.pokemon.getCheminImage(this.estEnBas));
+		this.icone = new ImageIcon(this.pokemon.getCheminImage(this.estEnBas));
 		
 		this.image = new JLabel(icone);
 		this.add(image);
