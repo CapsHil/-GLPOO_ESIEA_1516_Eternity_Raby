@@ -51,9 +51,21 @@ public class Combat implements MouseListener {
 			this.miseEnJeux = (int)(Math.random() * 500);
 		}
 		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
-			PariJoueurView pariView = new PariJoueurView();
+			this.combatView.setEnabled(false);
+			PariJoueurView pariView = new PariJoueurView(this.utilisateur, this.joueurHaut, this.joueurBas);
 			
-			this.miseEnJeux = 20; //paris sur demande
+			while(!(pariView.isPret())) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			this.miseEnJeux = pariView.getPari();
+			pariView.dispose();
+			
+			this.combatView.setEnabled(true);
 		}
 		else
 			this.miseEnJeux = 0;

@@ -19,8 +19,13 @@ import javax.swing.JTextField;
 public class PariJoueurView extends JFrame implements ActionListener {
 	private JoueurReel utilisateur;
 	
-	private JLabel montant = new JLabel("Montant");
-	private JLabel joueur = new JLabel("Joueur");
+	private Joueur joueurHaut, joueurBas;
+	
+	private JLabel montant;
+	private JLabel joueur;
+	
+	private JLabel argent;
+	private JLabel argentJoueur;
 	
 	private JTextField montantPari;
 	private JRadioButton haut;
@@ -31,27 +36,16 @@ public class PariJoueurView extends JFrame implements ActionListener {
 	
 	private boolean pret;
 	
-	public PariJoueurView () {
-		super("Paramètres de combat");
+	private int pari;
+
+	public PariJoueurView (JoueurReel utilisateur, Joueur joueurHaut, Joueur joueurBas) {
+		super("Pariez sur un joueur !");
 		this.pret = false;
+		this.utilisateur = utilisateur;
+		this.joueurHaut = joueurHaut;
+		this.joueurBas = joueurBas;
 		
 		this.initGui();
-	}
-	
-	public Joueur getJoueurHaut() {
-		return joueurHaut;
-	}
-
-	public Joueur getJoueurBas() {
-		return joueurBas;
-	}
-
-	public int getNbPkmnH() {
-		return nbPkmnH;
-	}
-
-	public int getNbPkmnB() {
-		return nbPkmnB;
 	}
 
 	public boolean isPret() {
@@ -63,16 +57,19 @@ public class PariJoueurView extends JFrame implements ActionListener {
 		cont.add(this.getPanel(), BorderLayout.CENTER);
 		this.setContentPane(cont);
 		
-		this.setBounds(300,1200,400,250);
+		this.setBounds(1000,700,400,250);
 		
 		this.setVisible(true);
 	}
 	
 	public JPanel getPanel() {
-		JPanel panel = new JPanel(new GridLayout(4, 2, 10, 10));
+		JPanel panel = new JPanel(new GridLayout(5, 2, 10, 10));
 		
 		montant = new JLabel("Montant");
 		joueur = new JLabel("Joueur");
+		
+		argent = new JLabel("Argent");
+		argentJoueur = new JLabel(this.utilisateur.getArgent() + " $");
 		
 		montantPari = new JTextField();	
 		haut = new JRadioButton("Haut");
@@ -82,6 +79,9 @@ public class PariJoueurView extends JFrame implements ActionListener {
 		
 		okButton = new JButton("OK");
 		okButton.addActionListener(this);
+		
+		panel.add(argent);
+		panel.add(argentJoueur);
 		
 		panel.add(montant);
 		panel.add(montantPari);
@@ -99,38 +99,26 @@ public class PariJoueurView extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		/*ArrayList<String> erreurs = new ArrayList<String>();
+		ArrayList<String> erreurs = new ArrayList<String>();
 		
-		if (this.nomJB.getText().length() == 0)
-			erreurs.add("Le joueur bas doit avoir un nom");
-		
-		if (this.nomJH.getText().length() == 0)
-			erreurs.add("Le joueur haut doit avoir un nom");
-
 		try {
-			this.nbPkmnB = Integer.parseInt(nbPkmnJB.getText());
+			this.pari = Integer.parseInt(montantPari.getText());
+			
+			if (this.pari <= 0)
+				erreurs.add("Le montant doit être supérieur à zéro");
+			
+			if (this.pari > this.utilisateur.getArgent())
+				erreurs.add("Le montant doit inférieur ou égal à votre argent");
 		}
 		catch (NumberFormatException e1) {
-			erreurs.add("Le joueur haut doit avoir un nombre de pokémons valide");
-		}
-
-		try {
-			this.nbPkmnH = Integer.parseInt(nbPkmnJH.getText());
-		}
-		catch (NumberFormatException e1) {
-			erreurs.add("Le joueur bas doit avoir un nombre de pokémons valide");
+			erreurs.add("Le montant doit être un nombre");
 		}
 		
 		if (erreurs.size() == 0) {
-			if (this.reelJH.isSelected())
-				this.joueurHaut = new JoueurReel(this.nomJH.getText(), 0);
+			if (this.haut.isSelected())
+				this.utilisateur.setJoueurPari(this.joueurHaut);
 			else
-				this.joueurHaut = new JoueurPNJ(this.nomJH.getText());
-			
-			if (this.reelJB.isSelected())
-				this.joueurBas = new JoueurReel(this.nomJB.getText(), 0);
-			else
-				this.joueurBas = new JoueurPNJ(this.nomJB.getText());
+				this.utilisateur.setJoueurPari(this.joueurBas);
 			
 			this.pret = true;
 		}
@@ -142,7 +130,11 @@ public class PariJoueurView extends JFrame implements ActionListener {
 			}
 			
 			JOptionPane.showMessageDialog(null, erreurMsg, "Erreur ...", JOptionPane.ERROR_MESSAGE);
-		}*/
+		}
 		
+	}
+	
+	public int getPari() {
+		return pari;
 	}
 }

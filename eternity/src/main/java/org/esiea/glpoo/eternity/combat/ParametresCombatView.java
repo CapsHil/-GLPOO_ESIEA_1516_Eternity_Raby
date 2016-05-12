@@ -20,9 +20,9 @@ public class ParametresCombatView extends JFrame implements ActionListener {
 	private Joueur joueurHaut, joueurBas;
 	private int nbPkmnH, nbPkmnB;
 	
-	private JLabel nom = new JLabel("Nom");
-	private JLabel type = new JLabel("Type");
-	private JLabel nbPkmn = new JLabel("Nombre pokemon");
+	private JLabel nom;
+	private JLabel type;
+	private JLabel nbPkmn;
 	
 	private JLabel jh;
 	private JTextField nomJH;

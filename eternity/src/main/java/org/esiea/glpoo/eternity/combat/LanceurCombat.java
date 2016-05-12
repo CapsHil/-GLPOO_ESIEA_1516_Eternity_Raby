@@ -6,7 +6,7 @@ public class LanceurCombat {
     {	
 		Context.extractData();
 		
-		TypeCombatEnum typeCombat = TypeCombatEnum.Libre;
+		TypeCombatEnum typeCombat = TypeCombatEnum.PariSur2PNJ;
 		
 		JoueurReel utilisateur = new JoueurReel("Bastien", 2000);
 		
