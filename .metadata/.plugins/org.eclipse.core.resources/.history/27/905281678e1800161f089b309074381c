@@ -79,18 +79,12 @@ public class Window extends BasicGame {
                     && y < map.getObjectY(0, objectID) + map.getObjectHeight(0, objectID)) {
                 if ("combat2".equals(map.getObjectType(0, objectID))) {
                     LanceurCombat.launchFight(player, TypeCombatEnum.PariSur2PNJ);
-                    this.x = 960F;
-                    this.y = 1050F;
                 }
                 else if ("combat".equals(map.getObjectType(0, objectID))) {
                     LanceurCombat.launchFight(player, TypeCombatEnum.ReelVsPNJ);
-                    this.x = 960F;
-                    this.y = 1050F;
                 }
                 else if ("libre".equals(map.getObjectType(0, objectID))) {
                     LanceurCombat.launchFight(player, TypeCombatEnum.Libre);
-                    this.x = 960F;
-                    this.y = 1050F;
                 } 
             }
          }
