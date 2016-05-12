@@ -9,9 +9,11 @@ public class JoueurReel extends Joueur  implements ActionListener, MouseListener
 	
 	private Capacite tempCapacite;
 	private int argent;
+	private Joueur joueurPari;
 
-	public JoueurReel(String nom) {
+	public JoueurReel(String nom, int argent) {
 		super(nom);
+		this.argent = argent;
 	}
 	
 	public void jouerPokemon() {
@@ -92,4 +94,21 @@ public class JoueurReel extends Joueur  implements ActionListener, MouseListener
 	public void finirTour() {
 		
 	}
+	
+	public int getArgent() {
+		return argent;
+	}
+
+	public void setArgent(int argent) {
+		this.argent = argent;
+	}
+	
+	public Joueur getJoueurPari() {
+		return joueurPari;
+	}
+
+	public void setJoueurPari(Joueur joueurPari) {
+		this.joueurPari = joueurPari;
+	}
+
 }

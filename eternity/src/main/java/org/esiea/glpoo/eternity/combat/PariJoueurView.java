@@ -16,33 +16,22 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class ParametresCombatView extends JFrame implements ActionListener {
-	private Joueur joueurHaut, joueurBas;
-	private int nbPkmnH, nbPkmnB;
+public class PariJoueurView extends JFrame implements ActionListener {
+	private JoueurReel utilisateur;
 	
-	private JLabel nom = new JLabel("Nom");
-	private JLabel type = new JLabel("Type");
-	private JLabel nbPkmn = new JLabel("Nombre pokemon");
+	private JLabel montant = new JLabel("Montant");
+	private JLabel joueur = new JLabel("Joueur");
 	
-	private JLabel jh;
-	private JTextField nomJH;
-	private JRadioButton reelJH;
-	private JRadioButton pnjJH;
-	private ButtonGroup typeJH;
-	private JTextField nbPkmnJH;
-	
-	private JLabel jb;
-	private JTextField nomJB;
-	private JRadioButton reelJB;
-	private JRadioButton pnjJB;
-	private ButtonGroup typeJB;
-	private JTextField nbPkmnJB;
+	private JTextField montantPari;
+	private JRadioButton haut;
+	private JRadioButton bas;
+	private ButtonGroup joueurPari;
 	
 	private JButton okButton;
 	
 	private boolean pret;
 	
-	public ParametresCombatView () {
+	public PariJoueurView () {
 		super("Paramètres de combat");
 		this.pret = false;
 		
@@ -74,60 +63,34 @@ public class ParametresCombatView extends JFrame implements ActionListener {
 		cont.add(this.getPanel(), BorderLayout.CENTER);
 		this.setContentPane(cont);
 		
-		this.setBounds(200,200,400,250);
+		this.setBounds(300,1200,400,250);
 		
 		this.setVisible(true);
 	}
 	
 	public JPanel getPanel() {
-		JPanel panel = new JPanel(new GridLayout(6, 2, 10, 10));
+		JPanel panel = new JPanel(new GridLayout(4, 2, 10, 10));
 		
-		nom = new JLabel("Nom");
-		type = new JLabel("Type");
-		nbPkmn = new JLabel("Nb pokemons");
+		montant = new JLabel("Montant");
+		joueur = new JLabel("Joueur");
 		
-		jh = new JLabel("Joueur haut");
-		nomJH = new JTextField();	
-		reelJH = new JRadioButton("Joueur");
-	    pnjJH = new JRadioButton("Ordi");
-		pnjJH.setSelected(true);
-	    typeJH = new ButtonGroup();
-	    typeJH.add(reelJH);
-	    typeJH.add(pnjJH);	
-		nbPkmnJH = new JTextField();
-		
-		jb = new JLabel("Joueur bas");
-		nomJB = new JTextField();	
-		reelJB = new JRadioButton("Joueur");
-		reelJB.setSelected(true);
-	    pnjJB = new JRadioButton("Ordi");
-	    typeJB = new ButtonGroup();
-	    typeJB.add(reelJB);
-	    typeJB.add(pnjJB);	
-		nbPkmnJB = new JTextField();
+		montantPari = new JTextField();	
+		haut = new JRadioButton("Haut");
+	    bas = new JRadioButton("Bas");
+		haut.setSelected(true);
+	    joueurPari = new ButtonGroup();
 		
 		okButton = new JButton("OK");
 		okButton.addActionListener(this);
 		
-		panel.add(new JLabel());
-		panel.add(jh);
-		panel.add(jb);
+		panel.add(montant);
+		panel.add(montantPari);
 		
-		panel.add(nom);
-		panel.add(nomJH);
-		panel.add(nomJB);
-		
-		panel.add(type);
-		panel.add(reelJH);
-		panel.add(reelJB);
+		panel.add(joueur);
+		panel.add(haut);
 		
 		panel.add(new JLabel());
-		panel.add(pnjJH);
-		panel.add(pnjJB);
-		
-		panel.add(nbPkmn);
-		panel.add(nbPkmnJH);
-		panel.add(nbPkmnJB);
+		panel.add(bas);
 		
 		panel.add(new JLabel());
 		panel.add(okButton);
@@ -136,7 +99,7 @@ public class ParametresCombatView extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		ArrayList<String> erreurs = new ArrayList<String>();
+		/*ArrayList<String> erreurs = new ArrayList<String>();
 		
 		if (this.nomJB.getText().length() == 0)
 			erreurs.add("Le joueur bas doit avoir un nom");
@@ -179,7 +142,7 @@ public class ParametresCombatView extends JFrame implements ActionListener {
 			}
 			
 			JOptionPane.showMessageDialog(null, erreurMsg, "Erreur ...", JOptionPane.ERROR_MESSAGE);
-		}
+		}*/
 		
 	}
 }

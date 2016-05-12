@@ -8,10 +8,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Combat implements MouseListener {
-	private Joueur joueurHaut, joueurBas, joueurActif, vainqueur;
-	private JoueurReel joueurUtilisateur;
+	private Joueur joueurHaut, joueurBas, joueurActif;
+	private JoueurReel utilisateur;
 	
 	private boolean estJoueurHautActif;
 	
@@ -22,15 +23,13 @@ public class Combat implements MouseListener {
 	
 	private boolean isClicking;
 	
-	private boolean termine;
+	private int miseEnJeux;
 	
-	public Combat (Joueur joueurHaut, Joueur joueurBas, JoueurReel joueurUtilisateur, int nbPkmnHaut, int nbPkmnBas, TypeCombatEnum typeCombat) {
+	public Combat (Joueur joueurHaut, Joueur joueurBas, JoueurReel utilisateur, int nbPkmnHaut, int nbPkmnBas, TypeCombatEnum typeCombat) {
 		this.joueurHaut = joueurHaut;
 		this.joueurBas = joueurBas;
-		this.joueurUtilisateur = joueurUtilisateur;
+		this.utilisateur = utilisateur;
 		this.typeCombat = typeCombat;
-		
-		this.termine = false;
 		
 		this.actionPanel = new ActionPanel();
 		
@@ -47,6 +46,17 @@ public class Combat implements MouseListener {
 		this.combatView = new CombatView(this.joueurHaut.getPanel(), this.joueurBas.getPanel(), actionPanel);
 		
 		this.isClicking = false;
+		
+		if (typeCombat == TypeCombatEnum.ReelVsPNJ) {
+			this.miseEnJeux = (int)(Math.random() * 500);
+		}
+		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
+			PariJoueurView pariView = new PariJoueurView();
+			
+			this.miseEnJeux = 20; //paris sur demande
+		}
+		else
+			this.miseEnJeux = 0;
 	}
 	
 	public void lancer() {
@@ -58,9 +68,29 @@ public class Combat implements MouseListener {
 	}
 		
 	public void finir(Joueur vainqueur, Joueur Perdant) {
-		this.vainqueur = vainqueur;
-		
-		this.termine = true;
+		if (typeCombat == TypeCombatEnum.ReelVsPNJ) {
+			if (vainqueur == this.utilisateur) {
+				this.utilisateur.setArgent(this.utilisateur.getArgent() + this.miseEnJeux);
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez gagné le combat, vous remportez " + this.miseEnJeux + "$");
+			}
+			else {
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez perdu le combat, vous ne remportez rien.");
+			}
+		}
+		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
+			if (vainqueur == this.utilisateur.getJoueurPari()) {
+				this.utilisateur.setArgent(this.utilisateur.getArgent() + this.miseEnJeux);
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez gagné le pari, vous remportez " + this.miseEnJeux + "$");
+			}
+			else {
+				this.utilisateur.setArgent(this.utilisateur.getArgent() - this.miseEnJeux);
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez perdu le pari, vous perdez " + this.miseEnJeux + "$");
+			}
+		}
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -106,13 +136,5 @@ public class Combat implements MouseListener {
 
 	public void mouseReleased(MouseEvent e) {
 		this.isClicking = false;
-	}
-	
-	public Joueur getVainqueur() {
-		return vainqueur;
-	}
-
-	public boolean isTermine() {
-		return termine;
 	}
 }
