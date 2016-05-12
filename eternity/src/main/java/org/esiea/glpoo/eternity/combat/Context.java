@@ -96,7 +96,43 @@ public class Context {
 	}
 	
 	
-	public static void extractTirageData (String chemin) {
+	public static void extractTirageData (String chemin) throws FileNotFoundException {
+		tirages = new Hashtable<Integer, TirageEuromillion>();
+
+		Scanner scanner = new Scanner(new File(chemin));
+        Scanner dataScanner = null;
+        int index = 0;
+        int id = 1, boule1 = 0, boule2 = 0, boule3 = 0, boule4 = 0, boule5 = 0, etoile1 = 0, etoile2 = 0;
+         
+        while (scanner.hasNextLine()) {
+            dataScanner = new Scanner(scanner.nextLine());
+            while (dataScanner.hasNext()) {
+                String data = dataScanner.next();
+                if (index == 4)
+                	boule1 = Integer.parseInt(data);
+                else if (index == 5)
+                	boule2 = Integer.parseInt(data);
+                else if (index == 6)
+                	boule3 = Integer.parseInt(data);
+                else if (index == 7)
+                	boule4 = Integer.parseInt(data);
+                else if (index == 8)
+                	boule5 = Integer.parseInt(data);
+                else if (index == 9)
+                	etoile1 = Integer.parseInt(data);
+                else if (index == 10)
+                	etoile2 = Integer.parseInt(data);
+                /*else
+                    System.out.println("invalid data::" + data);*/
+                index++;
+            }
+            TirageEuromillion tirage = new TirageEuromillion(boule1, boule2, boule3, boule4, boule5, etoile1, etoile2);
+            index = 0;
+            tirages.put(id,tirage);
+            id++;
+        }
+        scanner.close();
+        /*for(int i=1;i<=20;i++)
 		
 	}
 	
@@ -111,7 +147,11 @@ public class Context {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		extractTirageData("tirage_data.csv");
+		try {
+			extractTirageData("./src/data/csv/euromillions.csv");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static Pokemon getPokemonAleatoire() {
