@@ -25,11 +25,18 @@ public class Combat implements MouseListener {
 	
 	private int miseEnJeux;
 	
+	private boolean termine;
+	
+	private boolean finit;
+
 	public Combat (Joueur joueurHaut, Joueur joueurBas, JoueurReel utilisateur, int nbPkmnHaut, int nbPkmnBas, TypeCombatEnum typeCombat) {
 		this.joueurHaut = joueurHaut;
 		this.joueurBas = joueurBas;
 		this.utilisateur = utilisateur;
 		this.typeCombat = typeCombat;
+		
+		this.termine = false;
+		this.finit = false;
 		
 		this.actionPanel = new ActionPanel();
 		
@@ -103,6 +110,9 @@ public class Combat implements MouseListener {
 				this.actionPanel.printlnText("Vous avez perdu le pari, vous perdez " + this.miseEnJeux + "$");
 			}
 		}
+		
+		this.actionPanel.printlnText("Appuyez sur la console pour revenir à la map ...");
+		this.finit = true;
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -122,6 +132,9 @@ public class Combat implements MouseListener {
 			return;
 		
 		this.isClicking = true;
+		
+		if (this.finit)
+			this.termine = true;
 		
 		if (this.joueurActif.statut == StatutJoueurEnum.Termine) {
 			this.joueurActif.setStatut(StatutJoueurEnum.AttendTour);
@@ -143,10 +156,18 @@ public class Combat implements MouseListener {
 				this.finir(joueurHaut, joueurBas);
 			else
 				this.finir(joueurBas, joueurHaut);
-		}		
+		}	
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		this.isClicking = false;
+	}
+	
+	public void disposeView() {
+		this.combatView.dispose();
+	}
+	
+	public boolean isTermine() {
+		return termine;
 	}
 }

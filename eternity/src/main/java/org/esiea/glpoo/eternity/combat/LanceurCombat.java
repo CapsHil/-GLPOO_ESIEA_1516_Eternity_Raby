@@ -52,5 +52,15 @@ public class LanceurCombat {
         Combat combat = new Combat(joueurHaut, joueurBas, utilisateur, nbPkmnHaut, nbPkmnBas, typeCombat);
         
         combat.lancer();
+        
+        while(!(combat.isTermine())) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+        
+        combat.disposeView();
     }
 }

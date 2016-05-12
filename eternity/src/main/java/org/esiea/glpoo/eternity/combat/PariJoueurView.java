@@ -76,6 +76,8 @@ public class PariJoueurView extends JFrame implements ActionListener {
 	    bas = new JRadioButton("Bas");
 		haut.setSelected(true);
 	    joueurPari = new ButtonGroup();
+	    joueurPari.add(haut);
+	    joueurPari.add(bas);
 		
 		okButton = new JButton("OK");
 		okButton.addActionListener(this);
