@@ -10,18 +10,27 @@ import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 
 public class Combat implements MouseListener {
-	private Joueur joueurHaut, joueurBas, joueurActif;
+	private Joueur joueurHaut, joueurBas, joueurActif, vainqueur;
+	private JoueurReel joueurUtilisateur;
 	
 	private boolean estJoueurHautActif;
+	
+	private TypeCombatEnum typeCombat;
 	
 	private CombatView combatView;
 	private ActionPanel actionPanel;
 	
 	private boolean isClicking;
 	
-	public Combat (Joueur joueurHaut, Joueur joueurBas, int nbPkmnHaut, int nbPkmnBas) {
+	private boolean termine;
+	
+	public Combat (Joueur joueurHaut, Joueur joueurBas, JoueurReel joueurUtilisateur, int nbPkmnHaut, int nbPkmnBas, TypeCombatEnum typeCombat) {
 		this.joueurHaut = joueurHaut;
 		this.joueurBas = joueurBas;
+		this.joueurUtilisateur = joueurUtilisateur;
+		this.typeCombat = typeCombat;
+		
+		this.termine = false;
 		
 		this.actionPanel = new ActionPanel();
 		
@@ -49,7 +58,9 @@ public class Combat implements MouseListener {
 	}
 		
 	public void finir(Joueur vainqueur, Joueur Perdant) {
+		this.vainqueur = vainqueur;
 		
+		this.termine = true;
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -95,5 +106,13 @@ public class Combat implements MouseListener {
 
 	public void mouseReleased(MouseEvent e) {
 		this.isClicking = false;
+	}
+	
+	public Joueur getVainqueur() {
+		return vainqueur;
+	}
+
+	public boolean isTermine() {
+		return termine;
 	}
 }
