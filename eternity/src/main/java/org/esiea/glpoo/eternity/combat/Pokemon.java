@@ -74,10 +74,12 @@ public class Pokemon {
 		this.actionPanel.printlnText(this.nom + " lance "+ cap.getNom() + " sur " + receveur.getNom());
 		
 		if (cap.hasAttaque()) {
-			cap.attaquer(this, receveur);
+			if (this == receveur)
+				this.actionPanel.printlnText("Un pokémon ne ne peut pas s'attaquer lui même : échec");
+			else
+				cap.attaquer(this, receveur);
 		}
-		
-		if (cap.hasSoin()) {
+		else if (cap.hasSoin()) {
 			cap.soigner(this, receveur);
 		}
 		
@@ -143,5 +145,15 @@ public class Pokemon {
 	
 	public boolean getEstVivant() {
 		return this.estVivant;
+	}
+	
+	public Capacite getCapaciteAleatoire() {
+		while (true) {
+			int id = (int) (Math.random() * this.capacites.length); //... en fonction d'un tirage
+			//... voir si un ratio plus important d'attaque ou si ce ratio réduit en fonction de la vie des pokemens du joueur
+			
+			if (this.capacites[id] != null)
+				return this.capacites[id];
+		}
 	}
 }

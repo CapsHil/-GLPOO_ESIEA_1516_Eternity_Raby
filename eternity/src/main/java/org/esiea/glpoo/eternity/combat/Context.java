@@ -115,12 +115,15 @@ public class Context {
 	}
 	
 	public static Pokemon getPokemonAleatoire() {
-		int id = (int) (Math.random() * pokemons.size()); //... en fonction d'un tirage
-		return new Pokemon(pokemons.get(id));
+		while (true) {
+			int id = (int) (Math.random() * pokemons.size()); //... en fonction d'un tirage
+			
+			if (pokemons.get(id) != null)
+				return new Pokemon(pokemons.get(id));
+		}
 	}
 	
 	public static Capacite getCapacite(int id) {
 		return capacites.get(id);
 	}
-	
 }

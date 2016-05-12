@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/combat
 1,Engrais,10,0
 2,Chlorophylle,15,0
 3,Brasier,5,0
@@ -35,6 +38,7 @@
 34,Armurouillée,0,1
 35,Lévitation,18,0
 36,Adaptabilité,0,20
+<<<<<<< HEAD
 37,Anticipation,10,0
 =======
 id,name
@@ -76,3 +80,6 @@ id,name
 36,Adaptabilité
 37,Anticipation
 >>>>>>> refs/remotes/origin/master
+=======
+37,Anticipation,10,0
+>>>>>>> origin/combat

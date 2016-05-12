@@ -1,5 +1,6 @@
 package org.esiea.glpoo.eternity.combat;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -36,7 +37,7 @@ public class BoutonPanel extends JPanel {
 	
 	@Override
 	public Dimension getPreferredSize() { // Preferred size of the component
-		return new Dimension(100, 100);
+		return new Dimension(300, 100);
 	}
 	
 	public void setNomsCapacites(Pokemon p) {

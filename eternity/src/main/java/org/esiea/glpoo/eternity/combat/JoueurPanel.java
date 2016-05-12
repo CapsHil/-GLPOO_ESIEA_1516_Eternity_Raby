@@ -77,7 +77,7 @@ public class JoueurPanel extends JPanel {
 	
 	@Override
 	public Dimension getPreferredSize() { // Preferred size of the component
-		return new Dimension(800, 250);
+		return new Dimension(1200, 250);
 	}
 	
 	public void initJaugeView(JProgressBar progressBar) {
