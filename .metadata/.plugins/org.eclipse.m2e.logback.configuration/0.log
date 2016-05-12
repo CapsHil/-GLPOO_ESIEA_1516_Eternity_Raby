@@ -192,3 +192,7 @@
 2016-05-13 00:30:01,386 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
 2016-05-13 00:30:01,388 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-05-13 00:30:01,388 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-13 00:32:31,154 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:32:31,154 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-13 00:32:31,155 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:32:31,155 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources

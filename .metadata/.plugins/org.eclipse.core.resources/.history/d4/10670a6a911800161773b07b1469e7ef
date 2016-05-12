@@ -32,8 +32,8 @@ public class LanceurCombat {
 	        param.dispose();
 		}
 		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
-			joueurHaut = new JoueurPNJ("Maurice"); // A modifier en fonction d'un param ?
-			joueurBas = new JoueurPNJ("Albert");
+			joueurHaut = new JoueurPNJ("toto"); // A modifier en fonction d'un param ?
+			joueurBas = new JoueurPNJ("bidule");
 			nbPkmnHaut = 2; // A modifier en fonction d'un param ?
 			nbPkmnBas = 2;
 			
@@ -41,7 +41,7 @@ public class LanceurCombat {
 		}
 		else { // TypeCombatEnum.ReelVsPNJ
 			
-			joueurHaut = new JoueurPNJ("Alphonse"); // A modifier en fonction d'un param ?
+			joueurHaut = new JoueurPNJ("toto"); // A modifier en fonction d'un param ?
 			joueurBas = utilisateur;
 			nbPkmnHaut = 2; // A modifier en fonction d'un param ?
 			nbPkmnBas = 2;
@@ -90,8 +90,8 @@ public class LanceurCombat {
 	        param.dispose();
 		}
 		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
-			joueurHaut = new JoueurPNJ("Adolphe"); // A modifier en fonction d'un param ?
-			joueurBas = new JoueurPNJ("Kevin");
+			joueurHaut = new JoueurPNJ("toto"); // A modifier en fonction d'un param ?
+			joueurBas = new JoueurPNJ("bidule");
 			nbPkmnHaut = 2; // A modifier en fonction d'un param ?
 			nbPkmnBas = 2;
 			
@@ -99,7 +99,7 @@ public class LanceurCombat {
 		}
 		else { // TypeCombatEnum.ReelVsPNJ
 			
-			joueurHaut = new JoueurPNJ("Wilbur"); // A modifier en fonction d'un param ?
+			joueurHaut = new JoueurPNJ("toto"); // A modifier en fonction d'un param ?
 			joueurBas = utilisateur;
 			nbPkmnHaut = 2; // A modifier en fonction d'un param ?
 			nbPkmnBas = 2;
