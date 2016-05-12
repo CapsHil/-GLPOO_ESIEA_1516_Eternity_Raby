@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="grass" tilewidth="32" tileheight="32">
+  <image source="tuiles/grass.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="19" name="lava" tilewidth="32" tileheight="32">
+  <image source="tuiles/lava.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="37" name="pnj" tilewidth="32" tileheight="32">
+  <image source="tuiles/pnj.png" width="384" height="256"/>
+ </tileset>
+ <layer name="Calque de Tile 1" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2ZUXLDIAwFfQXnGr3//frVGY9GIClGkov3YyeJTTr4bUFAzuM4TgAAAACAl/K50N2Xt3P14PHyUeh+hp0Y5arl/sePcb/7mXbgI95H0L7T/Tz/GW1syIxnrmbXYZ2PkZvIuIH1PqLzFC7u+7gzJkZ/B+45kQ5kztacxHyV40T68TjBQb4bang/s3qg1Wtc1PgYvUoHuMh3cc18dg8fdT40B9ITPmqdWHWC/V+ND+8alvHR54Q17jOcjPLGRY2DqC/pDkfrXHyT6+wcq/uZ/jNafjM3nrqPk7U+pJNIXWeMrPUxynr0mXVXvo+RH+16d/93Y7QvH2XPOKj14aknM3ewzofMfVZD8FHnRGYfuQfrfFjrWJzU+bDOc7W2OMnz4fFE/rU+rP1edz/fgmc/7nUK/Q5x0Zs9+T/PB46eAz6ew8gDTuozl7lr97r7vhuecxHvmQrku5A+mK9qfFjzFS7qnMzWTJxn9bmI/i4COT7ktVHb7v7ujHW2y96vz8fVSeT7eMr1EXWBjxwfkWxZ9+b6iLrwXIPvfERqNuclNU5meVvZ4yPPh5Xv3fUY+H1E5ivWVjU+uvvydqK/e7Bvz/cRrd/Q44T//WfgmZuYq+qdaG7kffke8h1Ye3J85LiIch7MWdUuRm1P5RXWufDkO6rn+FjvwvIRaQvf+9Ayn81bWv3ofo5d8NQJ9h61Hsi1HzwA5MKc15PxN/Ue8nx4POEhz8X1s9ZG+sFHno+ZC60NPnJ9WDVgdF6Cj3wnVp2gjue7kFlr2Wv+uvu+G9b5Oj6e64M5qsaHdX6Li34vAAAAAAAAAAC78AvTieR3QJwAAA==
+  </data>
+ </layer>
+ <layer name="Mur" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3cS0rDUACF4buFQMVX62PgzKG4GsE1OHbzRkoglpq0IW1Pb78DHw4aQ81Po1R0VUpZAQAAAAAAAAAAbFi0ng7g6gDn785Zs4cyvI/W58gx2/ZY1tfwecLnDp2z32RR6ms01iNlt6271k35+9yX5XTXLqXHy8jjXxPOObZt112P0627//X93gv1yFlT9EjapfTovnfeT79UR1mtPZqNr3PZe2yXve143NzTI2NN72NtPa7L+t7U1/2Mn9yjU1uPsddO4mruMfT+0pzvdcy5mnukvgaGpkfW9Mjapfd43f1SHW2X3GNs3zOcY9/pkTU9sqZH1vTImh5Z0yNrehx273ser0fW9MiaHlnTI2t6ZK37HboeWdMja3pkTY+s6ZE1PbKmR9b0yJoeWdMja3pkTY+s6ZE1PbKmR9b0yJoeWdMja3pkrcYezT/OYbX12Pb35+ek//+wAAAAAAAAAAAAAM7FDzSx9JRAnAAA
+  </data>
+ </layer>
+ <objectgroup name="trigger" width="100" height="100">
+  <object name="pnj-2" type="combat2" x="1122" y="770" width="62" height="70"/>
+  <object type="combat" x="1282" y="835" width="26" height="57"/>
+  <object type="combat" x="1375" y="993" width="65" height="34"/>
+  <object type="combat" x="1152" y="1248" width="34" height="69"/>
+  <object type="combat" x="1405" y="1249" width="35" height="63"/>
+  <object type="combat" x="1918" y="1508" width="62" height="32"/>
+  <object type="combat" x="1544" y="834" width="76" height="30"/>
+ </objectgroup>
+ <layer name="Calque 3" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3aMQ7CQAwEwLyBgi4S/38lQqFKExN8xIdnpJRIh327RWBZAAAAAAAAAABgHuv74VqP3QMcu199AMLO7Or1mVv2Qf6Eu9+HXQMV/LqLdB+QLdIruqc+O2Jm0fvrnuczU6hFJs8zu/nYGYzVNWNdvzdkGJUfucznvyIwjs6KMSfYVM9C9fNVZnZ0JwN0NPLey9Sc7A34RvQdrq4BKtJNkOOTLPn995huGs+M+9A3tcgeAAAAAAAAAAAAABD1BL6wM6RAnAAA
+  </data>
+ </layer>
+</map>
