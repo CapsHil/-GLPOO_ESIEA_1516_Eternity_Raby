@@ -149,9 +149,9 @@ public class Pokemon {
 	
 	public Capacite getCapaciteAleatoire() {
 		while (true) {
-			int id = (int) (Math.random() * this.capacites.length); //... en fonction d'un tirage
+			int rand = (int) (Math.random() * Context.tirages.size()); //... en fonction d'un tirage
 			//... voir si un ratio plus important d'attaque ou si ce ratio réduit en fonction de la vie des pokemens du joueur
-			
+			int id = (Context.tirages.get(rand).getEtoile1() * Context.tirages.get(rand).getEtoile1()) % capacites.length;
 			if (this.capacites[id] != null)
 				return this.capacites[id];
 		}

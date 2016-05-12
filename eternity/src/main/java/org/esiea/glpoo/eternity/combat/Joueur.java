@@ -117,8 +117,8 @@ public abstract class Joueur {
 	
 	public Pokemon getPokemonVivantAleatoire() {
 		while (true) {
-			int id = (int) (Math.random() * this.pokemons.length); //... en fonction d'un tirage
-			
+			int rand = (int) (Math.random() * Context.tirages.size()); //... en fonction d'un tirage
+			int id = (Context.tirages.get(rand).getBoule1() + Context.tirages.get(rand).getBoule2() + Context.tirages.get(rand).getBoule3() + Context.tirages.get(rand).getBoule4() + Context.tirages.get(rand).getBoule5()) % pokemons.length;
 			if (this.pokemons[id].getEstVivant())
 				return this.pokemons[id];
 		}

@@ -9,7 +9,7 @@ public class Context {
 
 	private static Hashtable<Integer, PokemonCsv> pokemons; // <id, objet>
 	private static Hashtable<Integer, Capacite> capacites;
-	private static Hashtable<Integer, TirageEuromillion> tirages;
+	static Hashtable<Integer, TirageEuromillion> tirages;
 	
 	public static void extractCapacityData(String chemin) throws FileNotFoundException {
 		
@@ -158,8 +158,8 @@ public class Context {
 	
 	public static Pokemon getPokemonAleatoire() {
 		while (true) {
-			int id = (int) (Math.random() * pokemons.size()); //... en fonction d'un tirage
-			
+			int rand = (int) (Math.random() * tirages.size()); //... en fonction d'un tirage
+			int id = (tirages.get(rand).getBoule1() + tirages.get(rand).getBoule2() + tirages.get(rand).getBoule3() + tirages.get(rand).getBoule4() + tirages.get(rand).getBoule5()) % pokemons.size();
 			if (pokemons.get(id) != null)
 				return new Pokemon(pokemons.get(id));
 		}
