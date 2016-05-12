@@ -38,7 +38,7 @@ public class Window extends BasicGame {
     public void init(GameContainer container) throws SlickException {
         this.container = container;
        
-        player = new JoueurReel("Serge", 100);
+        player = new JoueurReel("Serge", 1000);
         this.map = new TiledMap("map/map.tmx");
         SpriteSheet spriteSheet = new SpriteSheet("map/sprites/character.png", 64, 64);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
