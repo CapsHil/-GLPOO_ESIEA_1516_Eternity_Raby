@@ -17,7 +17,7 @@ public class ImagePokemonPanel extends JPanel {
 	private boolean estEnBas;
 	private JLabel image;
 	private ImageIcon icone;
-	private static String path = "src/main/ressources/";
+	private static String path = "src/main/ressources/data/csv/";
 	
 	public ImagePokemonPanel(Pokemon pkmn, boolean estEnBas) {
 		this.pokemon = pkmn;
