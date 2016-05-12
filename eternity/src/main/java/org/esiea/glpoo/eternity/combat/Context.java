@@ -106,6 +106,7 @@ public class Context {
          
         while (scanner.hasNextLine()) {
             dataScanner = new Scanner(scanner.nextLine());
+            dataScanner.useDelimiter(";");
             while (dataScanner.hasNext()) {
                 String data = dataScanner.next();
                 if (index == 4)
@@ -133,6 +134,7 @@ public class Context {
         }
         scanner.close();
         /*for(int i=1;i<=20;i++)
+        	System.out.println(tirages.get(i).getBoule1());*/
 		
 	}
 	
