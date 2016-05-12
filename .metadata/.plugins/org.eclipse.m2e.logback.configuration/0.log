@@ -35,3 +35,31 @@
 2016-04-22 13:48:51,698 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
 2016-04-22 13:48:51,699 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-04-22 13:48:51,700 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 22:59:29,643 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.esiea.glpoo:eternity:0.0.1-SNAPSHOT @ /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/pom.xml.
+2016-05-12 22:59:29,643 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.esiea.glpoo:eternity:0.0.1-SNAPSHOT @ /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/pom.xml.
+2016-05-12 22:59:29,928 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 22:59:29,928 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 22:59:29,929 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 22:59:29,929 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 22:59:31,200 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.esiea.glpoo:eternity:0.0.1-SNAPSHOT @ /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/pom.xml.
+2016-05-12 22:59:32,068 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 22:59:32,068 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 22:59:32,070 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 22:59:32,070 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:03:53,022 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:03:53,022 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 23:03:53,023 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:03:53,023 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:04:31,026 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:04:31,026 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 23:04:31,027 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:04:31,027 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:05:11,091 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:05:11,092 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 23:05:11,093 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:05:11,093 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:05:16,103 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:05:16,103 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 23:05:16,104 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:05:16,104 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:05:26,703 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
