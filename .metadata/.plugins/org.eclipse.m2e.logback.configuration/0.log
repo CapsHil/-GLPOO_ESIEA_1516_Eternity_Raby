@@ -88,3 +88,26 @@
 2016-05-12 23:39:15,413 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
 2016-05-12 23:39:15,414 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-05-12 23:39:15,414 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:40:23,225 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:40:23,225 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 23:40:23,226 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:40:23,226 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:43:51,085 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:43:51,085 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 23:43:51,087 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:43:51,087 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:46:41,590 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2016-05-12 23:53:06,525 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:53:06,527 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-12 23:53:06,529 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-12 23:53:06,530 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-12 23:53:14,622 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2016-05-13 00:01:33,414 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:01:33,416 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-13 00:01:33,418 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:01:33,418 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-13 00:01:48,273 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:01:48,273 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/main/resources
+2016-05-13 00:01:48,274 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 00:01:48,275 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Pierre/workspace/GLPOO_ESIEA_1516_Eternity_Raby/eternity/src/test/resources
+2016-05-13 00:01:49,695 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="8">
  <tileset firstgid="1" name="grass" tilewidth="32" tileheight="32">
   <image source="tuiles/grass.png" width="96" height="192"/>
  </tileset>
@@ -19,14 +19,14 @@
    H4sIAAAAAAAAA+3cS0rDUACF4buFQMVX62PgzKG4GsE1OHbzRkoglpq0IW1Pb78DHw4aQ81Po1R0VUpZAQAAAAAAAAAAbFi0ng7g6gDn785Zs4cyvI/W58gx2/ZY1tfwecLnDp2z32RR6ms01iNlt6271k35+9yX5XTXLqXHy8jjXxPOObZt112P0627//X93gv1yFlT9EjapfTovnfeT79UR1mtPZqNr3PZe2yXve143NzTI2NN72NtPa7L+t7U1/2Mn9yjU1uPsddO4mruMfT+0pzvdcy5mnukvgaGpkfW9Mjapfd43f1SHW2X3GNs3zOcY9/pkTU9sqZH1vTImh5Z0yNrehx273ser0fW9MiaHlnTI2t6ZK37HboeWdMja3pkTY+s6ZE1PbKmR9b0yJoeWdMja3pkTY+s6ZE1PbKmR9b0yJoeWdMja3pkrcYezT/OYbX12Pb35+ek//+wAAAAAAAAAAAAAM7FDzSx9JRAnAAA
   </data>
  </layer>
- <objectgroup name="trigger" width="100" height="100">
-  <object name="pnj-2" type="combat2" x="1122" y="770" width="62" height="70"/>
-  <object type="combat" x="1282" y="835" width="26" height="57"/>
-  <object type="combat" x="1375" y="993" width="65" height="34"/>
-  <object type="combat" x="1152" y="1248" width="34" height="69"/>
-  <object type="combat" x="1405" y="1249" width="35" height="63"/>
-  <object type="combat" x="1918" y="1508" width="62" height="32"/>
-  <object type="combat" x="1544" y="834" width="76" height="30"/>
+ <objectgroup name="trigger">
+  <object id="1" name="pnj-2" type="combat2" x="1122" y="770" width="62" height="70"/>
+  <object id="2" type="combat" x="1282" y="835" width="26" height="57"/>
+  <object id="3" type="libre" x="1375" y="993" width="65" height="34"/>
+  <object id="4" type="combat" x="1152" y="1248" width="34" height="69"/>
+  <object id="5" type="combat" x="1405" y="1249" width="35" height="63"/>
+  <object id="6" type="combat" x="1918" y="1508" width="62" height="32"/>
+  <object id="7" type="combat" x="1544" y="834" width="76" height="30"/>
  </objectgroup>
  <layer name="Calque 3" width="100" height="100">
   <data encoding="base64" compression="gzip">
