@@ -37,7 +37,8 @@ public class Window extends BasicGame {
     @Override
     public void init(GameContainer container) throws SlickException {
         this.container = container;
-       
+        Music background = new Music("map/son_de_ouf.ogg");
+        background.loop();
         player = new JoueurReel("FDP", 1000);
         this.map = new TiledMap("map/map.tmx");
         SpriteSheet spriteSheet = new SpriteSheet("map/sprites/character.png", 64, 64);
@@ -49,8 +50,6 @@ public class Window extends BasicGame {
         this.animations[5] = loadAnimation(spriteSheet, 1, 9, 1);
         this.animations[6] = loadAnimation(spriteSheet, 1, 9, 2);
         this.animations[7] = loadAnimation(spriteSheet, 1, 9, 3);
-        Music background = new Music("map/son_de_ouf.ogg");
-        background.loop();
     }
 
     private Animation loadAnimation(SpriteSheet spriteSheet, int startX, int endX, int y) {
