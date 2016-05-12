@@ -57,7 +57,8 @@ public class Capacite {
 	}
 	
 	public int getValeurAppliquee (int valeur) {
-		int valeurReel = (int)(Math.random() * valeur);
+		int rand = (int)(Math.random() * Context.tirages.size());
+		int valeurReel = (Context.tirages.get(rand).getEtoile1() * Context.tirages.get(rand).getEtoile1()) % valeur;
 		return valeurReel;
 	}
 	
