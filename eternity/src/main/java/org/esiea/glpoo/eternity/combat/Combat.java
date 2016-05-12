@@ -8,10 +8,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Combat implements MouseListener {
-	private Joueur joueurHaut, joueurBas, joueurActif, vainqueur;
-	private JoueurReel joueurUtilisateur;
+	private Joueur joueurHaut, joueurBas, joueurActif;
+	private JoueurReel utilisateur;
 	
 	private boolean estJoueurHautActif;
 	
@@ -22,15 +23,20 @@ public class Combat implements MouseListener {
 	
 	private boolean isClicking;
 	
+	private int miseEnJeux;
+	
 	private boolean termine;
 	
-	public Combat (Joueur joueurHaut, Joueur joueurBas, JoueurReel joueurUtilisateur, int nbPkmnHaut, int nbPkmnBas, TypeCombatEnum typeCombat) {
+	private boolean finit;
+
+	public Combat (Joueur joueurHaut, Joueur joueurBas, JoueurReel utilisateur, int nbPkmnHaut, int nbPkmnBas, TypeCombatEnum typeCombat) {
 		this.joueurHaut = joueurHaut;
 		this.joueurBas = joueurBas;
-		this.joueurUtilisateur = joueurUtilisateur;
+		this.utilisateur = utilisateur;
 		this.typeCombat = typeCombat;
 		
 		this.termine = false;
+		this.finit = false;
 		
 		this.actionPanel = new ActionPanel();
 		
@@ -47,6 +53,29 @@ public class Combat implements MouseListener {
 		this.combatView = new CombatView(this.joueurHaut.getPanel(), this.joueurBas.getPanel(), actionPanel);
 		
 		this.isClicking = false;
+		
+		if (typeCombat == TypeCombatEnum.ReelVsPNJ) {
+			this.miseEnJeux = (int)(Math.random() * 500);
+		}
+		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
+			this.combatView.setEnabled(false);
+			PariJoueurView pariView = new PariJoueurView(this.utilisateur, this.joueurHaut, this.joueurBas);
+			
+			while(!(pariView.isPret())) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			this.miseEnJeux = pariView.getPari();
+			pariView.dispose();
+			
+			this.combatView.setEnabled(true);
+		}
+		else
+			this.miseEnJeux = 0;
 	}
 	
 	public void lancer() {
@@ -58,9 +87,32 @@ public class Combat implements MouseListener {
 	}
 		
 	public void finir(Joueur vainqueur, Joueur Perdant) {
-		this.vainqueur = vainqueur;
+		if (typeCombat == TypeCombatEnum.ReelVsPNJ) {
+			if (vainqueur == this.utilisateur) {
+				this.utilisateur.setArgent(this.utilisateur.getArgent() + this.miseEnJeux);
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez gagné le combat, vous remportez " + this.miseEnJeux + "$");
+			}
+			else {
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez perdu le combat, vous ne remportez rien.");
+			}
+		}
+		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
+			if (vainqueur == this.utilisateur.getJoueurPari()) {
+				this.utilisateur.setArgent(this.utilisateur.getArgent() + this.miseEnJeux);
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez gagné le pari, vous remportez " + this.miseEnJeux + "$");
+			}
+			else {
+				this.utilisateur.setArgent(this.utilisateur.getArgent() - this.miseEnJeux);
+				this.actionPanel.printlnText("");
+				this.actionPanel.printlnText("Vous avez perdu le pari, vous perdez " + this.miseEnJeux + "$");
+			}
+		}
 		
-		this.termine = true;
+		this.actionPanel.printlnText("Appuyez sur la console pour revenir à la map ...");
+		this.finit = true;
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -80,6 +132,9 @@ public class Combat implements MouseListener {
 			return;
 		
 		this.isClicking = true;
+		
+		if (this.finit)
+			this.termine = true;
 		
 		if (this.joueurActif.statut == StatutJoueurEnum.Termine) {
 			this.joueurActif.setStatut(StatutJoueurEnum.AttendTour);
@@ -101,17 +156,17 @@ public class Combat implements MouseListener {
 				this.finir(joueurHaut, joueurBas);
 			else
 				this.finir(joueurBas, joueurHaut);
-		}		
+		}	
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		this.isClicking = false;
 	}
 	
-	public Joueur getVainqueur() {
-		return vainqueur;
+	public void disposeView() {
+		this.combatView.dispose();
 	}
-
+	
 	public boolean isTermine() {
 		return termine;
 	}

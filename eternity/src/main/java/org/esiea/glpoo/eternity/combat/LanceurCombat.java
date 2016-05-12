@@ -6,9 +6,9 @@ public class LanceurCombat {
     {	
 		Context.extractData();
 		
-		TypeCombatEnum typeCombat = TypeCombatEnum.Libre;
+		TypeCombatEnum typeCombat = TypeCombatEnum.PariSur2PNJ;
 		
-		JoueurReel joueurUtilisateur = new JoueurReel("Bastien");
+		JoueurReel utilisateur = new JoueurReel("Bastien", 2000);
 		
 		Joueur joueurHaut, joueurBas;
 		int nbPkmnHaut, nbPkmnBas;
@@ -41,16 +41,26 @@ public class LanceurCombat {
 		}
 		else { // TypeCombatEnum.ReelVsPNJ
 			
-			joueurHaut = new JoueurPNJ("toto"); // A modifier en fonction d'un param ? ou recup depuis la map
-			joueurBas = joueurUtilisateur;
+			joueurHaut = new JoueurPNJ("toto"); // A modifier en fonction d'un param ?
+			joueurBas = utilisateur;
 			nbPkmnHaut = 2; // A modifier en fonction d'un param ?
 			nbPkmnBas = 2;
 			
 			// montant aleatoire des tunes a gagner
 		}
 		
-        Combat combat = new Combat(joueurHaut, joueurBas, joueurUtilisateur, nbPkmnHaut, nbPkmnBas, typeCombat);
+        Combat combat = new Combat(joueurHaut, joueurBas, utilisateur, nbPkmnHaut, nbPkmnBas, typeCombat);
         
         combat.lancer();
+        
+        while(!(combat.isTermine())) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+        
+        combat.disposeView();
     }
 }

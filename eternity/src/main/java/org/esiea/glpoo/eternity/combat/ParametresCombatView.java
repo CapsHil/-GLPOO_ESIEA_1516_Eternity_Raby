@@ -20,9 +20,9 @@ public class ParametresCombatView extends JFrame implements ActionListener {
 	private Joueur joueurHaut, joueurBas;
 	private int nbPkmnH, nbPkmnB;
 	
-	private JLabel nom = new JLabel("Nom");
-	private JLabel type = new JLabel("Type");
-	private JLabel nbPkmn = new JLabel("Nombre pokemon");
+	private JLabel nom;
+	private JLabel type;
+	private JLabel nbPkmn;
 	
 	private JLabel jh;
 	private JTextField nomJH;
@@ -160,12 +160,12 @@ public class ParametresCombatView extends JFrame implements ActionListener {
 		
 		if (erreurs.size() == 0) {
 			if (this.reelJH.isSelected())
-				this.joueurHaut = new JoueurReel(this.nomJH.getText());
+				this.joueurHaut = new JoueurReel(this.nomJH.getText(), 0);
 			else
 				this.joueurHaut = new JoueurPNJ(this.nomJH.getText());
 			
 			if (this.reelJB.isSelected())
-				this.joueurBas = new JoueurReel(this.nomJB.getText());
+				this.joueurBas = new JoueurReel(this.nomJB.getText(), 0);
 			else
 				this.joueurBas = new JoueurPNJ(this.nomJB.getText());
 			

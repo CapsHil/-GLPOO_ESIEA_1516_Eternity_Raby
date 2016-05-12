@@ -57,8 +57,8 @@ public class Capacite {
 	}
 	
 	public int getValeurAppliquee (int valeur) {
-		//... En fonction des tirages
-		return valeur;
+		int valeurReel = (int)(Math.random() * valeur);
+		return valeurReel;
 	}
 	
 	public String getNom() {
