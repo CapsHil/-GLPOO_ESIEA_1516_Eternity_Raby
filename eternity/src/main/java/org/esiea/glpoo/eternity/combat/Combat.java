@@ -48,7 +48,9 @@ public class Combat implements MouseListener {
 		this.isClicking = false;
 		
 		if (typeCombat == TypeCombatEnum.ReelVsPNJ) {
-			this.miseEnJeux = (int)(Math.random() * 500);
+			int rand = (int)(Math.random() * Context.tirages.size());
+			int valeurReel = (Context.tirages.get(rand).getEtoile1() * Context.tirages.get(rand).getEtoile1()) % 500;
+			this.miseEnJeux = valeurReel;
 		}
 		else if (typeCombat == TypeCombatEnum.PariSur2PNJ) {
 			this.combatView.setEnabled(false);
