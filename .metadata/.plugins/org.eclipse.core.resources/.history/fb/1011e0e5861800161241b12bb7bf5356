@@ -102,6 +102,8 @@ public class Window extends BasicGame {
             }
         }
         this.xCamera = this.x;
+    	Dimension d = Toolkit.getDefaultToolkit().getScreenSize(); 
+        new AppGameContainer(new Window(), d.width-100, d.height-100, false).start();
         this.yCamera = this.y;
     }
 
