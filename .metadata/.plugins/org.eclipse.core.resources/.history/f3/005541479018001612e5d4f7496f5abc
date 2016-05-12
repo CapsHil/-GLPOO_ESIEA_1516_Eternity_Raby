@@ -20,7 +20,7 @@ public class CombatView extends JFrame {
 		this.joueurPanelHaut = joueurPanelHaut;
 		this.joueurPanelBas = joueurPanelBas;
 		this.actionPanel = actionPanel;
-		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		
 		this.initGui();
 	}
 	
