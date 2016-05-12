@@ -49,8 +49,8 @@ public class Window extends BasicGame {
         this.animations[5] = loadAnimation(spriteSheet, 1, 9, 1);
         this.animations[6] = loadAnimation(spriteSheet, 1, 9, 2);
         this.animations[7] = loadAnimation(spriteSheet, 1, 9, 3);
-        Music background = new Music("map/son_de_ouf.ogg");
-        background.loop();
+//        Music background = new Music("map/son_de_ouf.ogg");
+//        background.loop();
     }
 
     private Animation loadAnimation(SpriteSheet spriteSheet, int startX, int endX, int y) {
